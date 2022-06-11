@@ -1,0 +1,36 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block html_header %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+{% endblock %}
+{% block html_body %}
+
+<meta>
+    <div class="recode_text">
+        <div class="recode_home-story-text-block">
+            <div class="recode_home-story-text-content">     
+                <!--       제목 -->
+        <h1>녹음 텍스트</h1>
+        <h3>(글자를 따라서 읽어 주세요)</h3>
+            <br>
+        <!--       본문 -->
+            <p href="#">옛날옛날, 어느 작은 연못에 엄마 청개구리와 아들 청개구리가 살고 있었습니다. 아들 청개구리는 엄마 청개구리의 말을 듣지 않고 무엇이든 거꾸로 해서 엄마의 마음을 아프게 하곤 했답니다.
+            엄마 청개구리가 “숲 속에는 뱀이 많아 위험하니 가지 말아라” 하면 아들 청개구리는 일부러 숲에 놀러 갔다가 하마터면 뱀한테 잡아 먹힐 뻔 하기도 하고, 엄마 청개구리가 “개굴개굴- 하고 울어보렴” 하고 우는 법을 가르쳐 주면 아들 청개구리는 어김 없이 “굴개굴개, 굴게굴게” 하고 울기도 했죠. 말을 듣지 않는 아들 청개구리 때문에 엄마 청개구리는 매일 너무 마음이 아팠지만, 아들 청개구리는 어느 하루도 엄마 청개구리의 말을 듣는 날 없이 반대로만 행동하여 속을 썩였답니다.
+               
+            </p>
+            </div>
+        </div>
+    </div class="recode_text">
+    <div class="recode-btn">
+        <button type="button" class="btn btn-success btn-lg" href="#">  재생  </button>
+        <button type="button" class="btn btn-danger btn-lg" href="#">  녹음  </button>
+        <button type="button" class="btn btn-secondary btn-lg" href="#">  저장  </button>
+        <button type="button" class="btn btn-light btn-lg" href="#">  다시하기  </button>
+        <button type="button" class="btn btn-warning btn-lg" href="#">  다음  </button>
+
+
+    </div>
+</meta>
+
+{% endblock %}

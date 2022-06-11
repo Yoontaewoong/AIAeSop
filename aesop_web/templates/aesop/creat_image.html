@@ -1,0 +1,163 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block html_header %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+{% endblock %}
+{% block html_body %}
+
+<image_meta>
+    <div class="image_text">
+        <div class="image_home-story-text-block">
+            <div class="image_home-story-text-content">     
+                <!--       제목 -->
+				<div class="image_image-box">
+					<img src="http://brunobrito.pt/image.jpg" alt="Roman looked Strong">
+				  </div>
+            </div>
+        </div>
+</meta>
+<!-- -------------------입력 상자----------------- -->
+<!DOCTYPE html>
+<image_html1>
+<image_head1>
+	<title> Secret Message </title>
+	<script type="text/javascript">
+function getSecretMessage(message){
+this.message = (message.split(' ')).join('');
+      this.size = this.message.length;
+      this.normalizeText_Rect=[],
+      this.normalizeText_Chunk ="";
+      this.encodedText_Rect=[];
+      this.encodedText_Chunk="";
+      this.col=0;
+      this.rows=0;
+	}
+	getSecretMessage.prototype.getCol=function(){
+		let col = 0;
+		for(let i=1; i<this.size; i++){
+	     if(i*i == this.size){col=i; break}
+	     else if(i*i >= this.size){col=i; break}
+}
+
+	return col;
+
+	}
+	getSecretMessage.prototype.Encode=function(){
+		//get col
+		this.col = this.getCol();
+
+		//get normalise chunk
+		for (var j = 0; j<this.size; j++) {
+		this.normalizeText_Chunk += this.message.charAt(j);
+		if ((j+1) % this.col === 0 &&
+			j !== this.size-1) this.normalizeText_Chunk +=' ';
+	}
+
+
+	//get normalise Rect
+	this.normalizeText_Rect = this.normalizeText_Chunk.split(' ');
+
+	//check for nth character short and pad
+let last =this.normalizeText_Rect[this.normalizeText_Rect.length-1]
+
+	if(last.length<this.col){	this.normalizeText_Rect[this.normalizeText_Rect.length-1] =last.padEnd(last.length+1)
+	}
+	//get rows
+	this.rows =  this.normalizeText_Rect.length
+
+	//now encode message
+	for (let z=0; z<this.col; z++){
+		    var enc= "";
+		    for(let k=0; k<this.rows; k++){
+		    	    enc+=this.normalizeText_Rect[k].charAt(z)
+		    }
+		    //get encode rect
+		   this.encodedText_Rect.push(enc)
+	}
+
+
+this.encodedText_Chunk =this.encodedText_Rect.join(" ");
+
+	}
+
+	getSecretMessage.prototype.display=function(){
+
+		this.Encode()
+
+
+var div1= document.getElementsByClassName('out')[0],
+div2= document.getElementsByClassName('out')[1],
+div3= document.getElementsByClassName('out')[2],
+div4= document.getElementsByClassName('out')[3];
+
+
+
+      div1.innerHTML=this.normalizeText_Chunk
+		div2.innerHTML=this.normalizeText_Rect.join('<br/>')
+		div3.innerHTML=this.encodedText_Chunk
+	    div4.innerHTML=this.encodedText_Rect.join('<br/>')
+
+
+	}
+
+
+function handleIt(){
+var sentence = document.forms["myForm"]["sentence"].value;
+let test = new getSecretMessage(sentence);
+ test.display()
+
+}
+
+
+
+
+
+
+    </script>
+</image_head1>
+
+<image_body1>
+
+<div class="image_container">
+<form method="post" action="javascript:handleIt()" name="myForm" onsubmit="return validateForm()">
+<div>
+    <br>
+	<label class="image_nm">이미지 생성을 위한 문장을 작성해보세요!</label>
+    <br>
+    <br>
+	<textarea rows="5" cols="100" type ="text" name="sentence" id="sentence"> </textarea>
+</div>
+<br />
+<input  class="image_btn btn-primary btn-lg" name="Submit" type="button" value="실행" />
+<input  class="image_btn btn-primary btn-lg" name="save" type="submit" value="저장" />
+</form>
+</div>
+
+
+
+<script>
+
+function validateForm(){
+	 var sentence = document.forms["myForm"]["sentence"].value;
+
+	 if(sentence == null||sentence == ""){
+		alert("저장되었습니다");
+		return false;
+	 }
+
+	 if(sentence.length < 50){
+	 	alert("최소 50자 이상이 되어야 합니다.");
+	 		return false;
+	 }
+}
+// var mess = "If man was meant to stay on the ground god would have given us roots";
+
+
+
+</script>
+
+</image_body1>
+</image_html1>
+
+{% endblock %}

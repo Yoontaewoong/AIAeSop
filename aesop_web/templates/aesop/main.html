@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% load static %}
+{% block html_header %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+{% endblock %}
+{% block html_body %}
+
+    <!-- 슬라이더 -->
+    <div class="carousel-container">
+      <div class="carousel">
+      </div>
+    </div>
+
+  
+
+    <h1 class="title">추천 동화</h1>
+    <div class="movies-list">
+      <!-- 양옆 화살표 버튼 -->
+        <button class="pre-btn"><img src="/static/images/pre.png" alt=""></button>
+        <button class="nxt-btn"><img src="/static/images/nxt.png" alt=""></button>
+        <div class="card-container">
+          {% for story in story_all %}
+            {% if story.id >= 97 and story.id < 105 %} <a href="page1/{{story.id}}">
+            <div class="card">
+              <img src="{{story.image}}" class="card-img" alt="">
+              <div class="card-body">
+                <h2 class="name">{{story.title}}</h2>
+              </div>
+            </div>
+             </a>
+            {% endif %}
+          {% endfor %}
+        </div>
+
+        <h1 class="title">한국 동화</h1>
+            <div class="movies-list">
+              <!-- 양옆 화살표 버튼 -->
+                <button class="pre-btn"><img src="/static/images/pre.png" alt=""></button>
+                <button class="nxt-btn"><img src="/static/images/nxt.png" alt=""></button>
+                <div class="card-container">
+                  {% for story in story_all %}
+                    {% if story.id >= 0 and story.id < 9 %} <a href="page1/{{story.id}}">
+                    <div class="card">
+                      <img src="{{story.image}}" class="card-img" alt="">
+                      <div class="card-body">
+                        <h2 class="name">{{story.title}}</h2>
+                      </div>
+                    </div>
+                     </a>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+
+
+        <h1 class="title">외국 동화</h1>
+        <div class="movies-list">
+          <!-- 양옆 화살표 버튼 -->
+          <button class="pre-btn"><img src="/static/images/pre.png" alt=""></button>
+          <button class="nxt-btn"><img src="/static/images/nxt.png" alt=""></button>
+          <div class="card-container">
+            {% for story in story_all %}
+              {% if story.id >= 110 and story.id < 118 %} <a href="page1/{{story.id}}">
+              <div class="card">
+                <img src="{{story.image}}" class="card-img" alt="">
+                <div class="card-body">
+                  <h2 class="name">{{story.title}}</h2>
+                </div>
+              </div>
+               </a>
+              {% endif %}
+            {% endfor %}
+          </div>
+              
+            
+
+
+    <script src="/static/data.js" ></script>
+    <script src="/static/app.js" ></script>
+
+    {% endblock %}

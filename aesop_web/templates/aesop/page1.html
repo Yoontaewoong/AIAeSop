@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+{% block html_header %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+{% endblock %}
+{% block html_body %}
+
+      <section class="info" >
+        <br><br><br><br><br><br><br>
+        <!-- <h2>동화 선택</h2> -->
+
+      <div class="title" style="text-align:center" > 
+        <img src="{{story.image}}" alt="My Image" >
+        <br><br>
+        <form name="voice_choice" action="index.html" method= "get" >
+          <select name="voice" class="btn-lg" style=" background:rgb(87, 118, 145); color: white">
+            <option value="">-- 목소리 선택 --</option>
+            <option value="남(전래동화)">엄마</option>
+            <option value="여(전래동화)">할아버지</option>
+          </select>            
+          <!-- <a href="{% url 'aesop:index' %}"></a> -->
+          <button type="button" class="run_btn btn-outline-secondary">
+            <a href="aiaesop\templates\aesop\page2.html">재생</a></button>
+        
+        </section>
+        </form>
+      </div>
+
+
+
+
+  {% endblock %}
+
+
+
+
+

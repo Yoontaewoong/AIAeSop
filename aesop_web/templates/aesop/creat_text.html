@@ -1,0 +1,166 @@
+{% extends "base.html" %}
+{% load static %}
+{% block html_header %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+{% endblock %}
+{% block html_body %}
+
+<creat_meta>
+    <div class="creat_text">
+        <div class="creat_home-story-text-block">
+            <div class="creat_home-story-text-content">     
+                <!--       제목 -->
+        <h1>만들어진 동화를 읽어보세요!</h1>
+            <br>
+        <!--       본문 -->
+            <p>옛날옛날, 어느 작은 연못에 엄마 청개구리와 아들 청개구리가 살고 있었습니다. 아들 청개구리는 엄마 청개구리의 말을 듣지 않고 무엇이든 거꾸로 해서 엄마의 마음을 아프게 하곤 했답니다.
+            엄마 청개구리가 “숲 속에는 뱀이 많아 위험하니 가지 말아라” 하면 아들 청개구리는 일부러 숲에 놀러 갔다가 하마터면 뱀한테 잡아 먹힐 뻔 하기도 하고, 엄마 청개구리가 “개굴개굴- 하고 울어보렴” 하고 우는 법을 가르쳐 주면 아들 청개구리는 어김 없이 “굴개굴개, 굴게굴게” 하고 울기도 했죠. 말을 듣지 않는 아들 청개구리 때문에 엄마 청개구리는 매일 너무 마음이 아팠지만, 아들 청개구리는 어느 하루도 엄마 청개구리의 말을 듣는 날 없이 반대로만 행동하여 속을 썩였답니다.
+            어느 날, 아들 청개구리만을 걱정하며 속상해 하던 엄마 청개구리는 결국 병이 나서 쓰러져 버렸습니다. 죽음이 다가온 것을 알게 된 엄마 청개구리는 아들 청개구리에게 말했습니다.            
+            </p>
+            </div>
+        </div>
+</creat_meta>
+<!-- -------------------입력 상자----------------- -->
+<!DOCTYPE html>
+<creat_html1>
+<creat_head1>
+	<title> Secret Message </title>
+	<!-- <script type="text/javascript">
+function getSecretMessage(message){
+this.message = (message.split(' ')).join('');
+      this.size = this.message.length;
+      this.normalizeText_Rect=[],
+      this.normalizeText_Chunk ="";
+      this.encodedText_Rect=[];
+      this.encodedText_Chunk="";
+      this.col=0;
+      this.rows=0;
+	}
+	getSecretMessage.prototype.getCol=function(){
+		let col = 0;
+		for(let i=1; i<this.size; i++){
+	     if(i*i == this.size){col=i; break}
+	     else if(i*i >= this.size){col=i; break}
+}
+
+	return col;
+
+	}
+	getSecretMessage.prototype.Encode=function(){
+		//get col
+		this.col = this.getCol();
+
+		//get normalise chunk
+		for (var j = 0; j<this.size; j++) {
+		this.normalizeText_Chunk += this.message.charAt(j);
+		if ((j+1) % this.col === 0 &&
+			j !== this.size-1) this.normalizeText_Chunk +=' ';
+	}
+
+
+	//get normalise Rect
+	this.normalizeText_Rect = this.normalizeText_Chunk.split(' ');
+
+	//check for nth character short and pad
+let last =this.normalizeText_Rect[this.normalizeText_Rect.length-1]
+
+	if(last.length<this.col){	this.normalizeText_Rect[this.normalizeText_Rect.length-1] =last.padEnd(last.length+1)
+	}
+	//get rows
+	this.rows =  this.normalizeText_Rect.length
+
+	//now encode message
+	for (let z=0; z<this.col; z++){
+		    var enc= "";
+		    for(let k=0; k<this.rows; k++){
+		    	    enc+=this.normalizeText_Rect[k].charAt(z)
+		    }
+		    //get encode rect
+		   this.encodedText_Rect.push(enc)
+	}
+
+
+this.encodedText_Chunk =this.encodedText_Rect.join(" ");
+
+	}
+
+	getSecretMessage.prototype.display=function(){
+
+		this.Encode()
+
+
+var div1= document.getElementsByClassName('out')[0],
+div2= document.getElementsByClassName('out')[1],
+div3= document.getElementsByClassName('out')[2],
+div4= document.getElementsByClassName('out')[3];
+
+
+
+      div1.innerHTML=this.normalizeText_Chunk
+		div2.innerHTML=this.normalizeText_Rect.join('<br/>')
+		div3.innerHTML=this.encodedText_Chunk
+	    div4.innerHTML=this.encodedText_Rect.join('<br/>')
+
+
+	}
+
+
+function handleIt(){
+var sentence = document.forms["myForm"]["sentence"].value;
+let test = new getSecretMessage(sentence);
+ test.display()
+
+}
+
+
+
+
+
+
+    </script> -->
+</creat_head1>
+
+<creat_body1>
+
+<div class="creat_container">
+<form method="post" action="javascript:handleIt()" name="myForm" onsubmit="return validateForm()">
+<div>
+    <br>
+	<label class="nm">동화 생성을 위한 문장을 작성해주세요!</label>
+    <br>
+    <br>
+	<textarea rows="5" cols="100" type ="text" name="sentence" id="sentence"> </textarea>
+</div>
+<br />
+<input  class="creat_btn btn-primary btn-lg" name="Submit" type="button" value="실행" />
+<input  class="creat_btn btn-primary btn-lg" name="save" type="submit" value="저장" />
+</form>
+</div>
+
+
+
+<script>
+
+function validateForm(){
+	 var sentence = document.forms["myForm"]["sentence"].value;
+
+	 if(sentence == null||sentence == ""){
+		alert("저장되었습니다");
+		return false;
+	 }
+
+	 if(sentence.length < 50){
+	 	alert("최소 50자 이상이 되어야 합니다.");
+	 		return false;
+	 }
+}
+// var mess = "If man was meant to stay on the ground god would have given us roots";
+
+
+
+</script>
+
+</creat_body1>
+</creat_html1>
+
+{% endblock %}

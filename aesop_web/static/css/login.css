@@ -1,0 +1,112 @@
+
+.login-form{
+    background: #0e113a;
+}
+.int-area{
+    color: #f1f3f8;
+    align-items: left;
+    text-align: center;
+    margin-top : 10px;
+}
+#primary {
+    margin-top: 10px;
+    width : 100%;
+    border-radius : 10px;
+    border-style:none;
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+}
+
+.login {
+    width : 50%;
+}
+.container {
+    width : 70%;
+    background: #000000;
+}
+.wh-text {
+    position:relative;/*relative == 요소를 자기 기준으로 배치 */
+    top:0%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -130%);
+    color:#eceef3 ; 
+    margin: 0%;
+font-size: 25px;
+text-align: center;
+color: #f0f2f6;
+padding: 0%;
+margin: 0%;
+}
+
+a:hover { text-decoration:none !important }
+/* hover : 마우스를 대상 위에 올렸을 때. 얹었을 때. */
+.caption{
+    color:aliceblue;
+    padding-right: 5%;
+}
+
+.btn-area{
+    width: 500px;
+    margin:auto;
+}
+
+.accent{
+    font-size: 100%;
+    font-weight: 800;
+    color: #eceef3;
+}
+.wh-image{
+    margin: 0%;
+    padding:0%;
+    position: relative;
+    transform: translate(0%, 10%);
+    /* transform: translate(10px, 20px); */
+}
+
+
+
+.signupform{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+
+}
+
+.submit-button{
+    float: right;
+}
+
+
+/* -------회원 가입 페이지 ------- */
+
+
+.all{
+    font-family: 'MapoFlowerIsland';
+    text-decoration: none;
+    align-items: center;
+    height: 100%;
+    line-height: 100%;
+    text-align: center;
+    margin-top: 15%;
+    color: white;
+
+}
+.loginbox, .loginbtn{
+    height: 30px;
+    width: 300px;
+    margin: 5px;
+    font-size: 17px;
+    align-items: center;
+    color: rgb(23, 128, 122);
+}
+
+.loginbtn{
+    background-color:lightseagreen;
+    color: white;
+    border: 0;
+    outline: 0;
+}
